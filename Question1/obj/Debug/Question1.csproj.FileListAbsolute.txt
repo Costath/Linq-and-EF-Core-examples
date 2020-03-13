@@ -1,0 +1,12 @@
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Lab3Solution\bin\Debug\Lab3Solution.exe.config
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Lab3Solution\bin\Debug\Lab3Solution.exe
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Lab3Solution\bin\Debug\Lab3Solution.pdb
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Lab3Solution\obj\Debug\Question1.csprojAssemblyReference.cache
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Lab3Solution\obj\Debug\Lab3Solution.exe
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Lab3Solution\obj\Debug\Lab3Solution.pdb
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Question1\bin\Debug\Question1.exe.config
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Question1\bin\Debug\Question1.exe
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Question1\bin\Debug\Question1.pdb
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Question1\obj\Debug\Question1.csprojAssemblyReference.cache
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Question1\obj\Debug\Question1.exe
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Question1\obj\Debug\Question1.pdb

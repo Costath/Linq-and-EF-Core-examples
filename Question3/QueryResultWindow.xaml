@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Question3"
+        xmlns:Models="clr-namespace:BooksClassLibrary.Models;assembly=BooksClassLibrary" x:Class="Question3.QueryResultWindow"
+        mc:Ignorable="d"
+        Title="Query Result" Height="580.886" Width="912.188" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Window.Resources>
+        <CollectionViewSource x:Key="titlesViewSource" d:DesignSource="{d:DesignInstance {x:Type Models:Titles}, CreateList=True}"/>
+        <CollectionViewSource x:Key="authorsViewSource" d:DesignSource="{d:DesignInstance {x:Type Models:Authors}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource titlesViewSource}">
+
+        <DataGrid x:Name="titlesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,10,281,212" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="copyrightColumn" Width="SizeToHeader" Header="Copyright" Binding="{Binding Copyright}"/>
+                <DataGridTextColumn x:Name="editionNumberColumn" Width="SizeToHeader" Header="Edition Number" Binding="{Binding EditionNumber}"/>
+                <DataGridTextColumn x:Name="isbnColumn" Width="Auto" Header="Isbn" Binding="{Binding Isbn}"/>
+                <DataGridTextColumn x:Name="titleColumn" Width="*" Header="Title" Binding="{Binding Title}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="authorsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource authorsViewSource}}" Margin="623,10,10,340" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="*"/>
+                <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
