@@ -38,24 +38,24 @@ namespace Question2
             string FirstName = FirstNameTextBox.Text;
             string LastName = LastNameTextBox.Text;
             string BattingAverage = BattingAverageTextBox.Text;
-
-            Players player = new Players
-            {
-                FirstName = FirstName,
-                LastName = LastName,
-                BattingAverage = decimal.Parse(BattingAverage)
-            };
-
-            _mainWindow.dbContext.Players.Add(player);
-
+            Players player = new Players();
 
             try
             {
+                player.FirstName = FirstName;
+                player.LastName = LastName;
+                player.BattingAverage = decimal.Parse(BattingAverage);
+                _mainWindow.dbContext.Players.Add(player);
                 _mainWindow.dbContext.SaveChanges();
                 MessageBox.Show("Player saved");
 
                 _mainWindow.Show();
                 Close();
+            }
+            catch (System.FormatException)
+            {
+                _mainWindow.dbContext.Players.Remove(player);
+                MessageBox.Show("It was not possible to save the information. Make sure all fields are filled.", "Error Saving");
             }
             catch (Microsoft.EntityFrameworkCore.DbUpdateException)
             {

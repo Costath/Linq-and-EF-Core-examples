@@ -66,7 +66,7 @@ C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Book
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
-C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\obj\Debug\BooksClassLibrary.csprojAssemblyReference.cache
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\obj\Debug\BooksClassLibrary.csproj.CopyComplete
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\obj\Debug\BooksClassLibrary.dll
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\obj\Debug\BooksClassLibrary.pdb
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BooksClassLibrary\obj\Debug\BooksClassLibrary.csprojAssemblyReference.cache

@@ -42,7 +42,7 @@ namespace Question2
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            _mainWindow.Close();
+            //_mainWindow.Close();
         }
     }
 }

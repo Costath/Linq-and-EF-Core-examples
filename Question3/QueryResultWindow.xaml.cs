@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BooksClassLibrary.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,25 +30,67 @@ namespace Question3
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ////var list = dbContext.Titles.Include("AuthorIsbn.Author").ToList();
-            //var list = _mainWindow.dbContext.AuthorIsbn.Include("Author").Include("IsbnNavigation").ToList();
-            //var list = _mainWindow.dbContext.AuthorIsbn.Include("Author.AuthorIsbn").ToList();
-            var list = _mainWindow.dbContext.Titles.Include("AuthorIsbn.Author").OrderBy(b => b.Title).ToList();
+            IQueryable<TitleAuthor> query = null;
+            IOrderedQueryable<IGrouping<string, Titles>> groupQuery = null;
 
+            if (_mainWindow.selectedQuery == SelectedQuery.query1)
+            {
+                query = from AI in _mainWindow.dbContext.AuthorIsbn
+                    join A in _mainWindow.dbContext.Authors
+                        on AI.AuthorId equals A.AuthorId
+                    join T in _mainWindow.dbContext.Titles
+                        on AI.Isbn equals T.Isbn
+                    orderby T.Title
+                    select new TitleAuthor { Title = T.Title, FirstName = A.FirstName, LastName = A.LastName };
+            } 
+            else if (_mainWindow.selectedQuery == SelectedQuery.query2)
+            {
+                query = from AI in _mainWindow.dbContext.AuthorIsbn
+                        join A in _mainWindow.dbContext.Authors
+                            on AI.AuthorId equals A.AuthorId
+                        join T in _mainWindow.dbContext.Titles
+                            on AI.Isbn equals T.Isbn
+                        orderby T.Title, A.LastName, A.FirstName
+                        select new TitleAuthor { Title = T.Title, FirstName = A.FirstName, LastName = A.LastName };
+            }
+            else
+            {
+                query = from AI in _mainWindow.dbContext.AuthorIsbn
+                        join A in _mainWindow.dbContext.Authors
+                            on AI.AuthorId equals A.AuthorId
+                        join T in _mainWindow.dbContext.Titles
+                            on AI.Isbn equals T.Isbn
+                        orderby T.Title, A.LastName, A.FirstName
+                        select new TitleAuthor { Title = T.Title, FirstName = A.FirstName, LastName = A.LastName };
+            }
+            
+            System.Windows.Data.CollectionViewSource resultsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("resultsViewSource")));
+            List<TitleAuthor> list = new List<TitleAuthor>();
 
-
-            System.Windows.Data.CollectionViewSource titlesViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("titlesViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            titlesViewSource.Source = list;
-
-            System.Windows.Data.CollectionViewSource authorsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("authorsViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            authorsViewSource.Source = _mainWindow.dbContext.Titles.Include("AuthorIsbn.Author").ToList();
+            foreach (var item in query)
+            {
+                list.Add(item);
+            }
+            resultsViewSource.Source = list;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            _mainWindow.Close();
+            //_mainWindow.Close();
         }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Show();
+            this.Close();
+        }
+
+    }
+
+    public class TitleAuthor
+    {
+        public string Title { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

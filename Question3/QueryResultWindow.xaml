@@ -6,27 +6,16 @@
         xmlns:local="clr-namespace:Question3"
         xmlns:Models="clr-namespace:BooksClassLibrary.Models;assembly=BooksClassLibrary" x:Class="Question3.QueryResultWindow"
         mc:Ignorable="d"
-        Title="Query Result" Height="580.886" Width="912.188" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="Query Result" Height="519.386" Width="510.688" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Window.Resources>
         <CollectionViewSource x:Key="titlesViewSource" d:DesignSource="{d:DesignInstance {x:Type Models:Titles}, CreateList=True}"/>
         <CollectionViewSource x:Key="authorsViewSource" d:DesignSource="{d:DesignInstance {x:Type Models:Authors}, CreateList=True}"/>
+        <CollectionViewSource x:Key="resultsViewSource"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource titlesViewSource}">
+    <Grid DataContext="{StaticResource resultsViewSource}">
+        <DataGrid x:Name="titlesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,10,10,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="True" Height="398" VerticalAlignment="Top">
 
-        <DataGrid x:Name="titlesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,10,281,212" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="copyrightColumn" Width="SizeToHeader" Header="Copyright" Binding="{Binding Copyright}"/>
-                <DataGridTextColumn x:Name="editionNumberColumn" Width="SizeToHeader" Header="Edition Number" Binding="{Binding EditionNumber}"/>
-                <DataGridTextColumn x:Name="isbnColumn" Width="Auto" Header="Isbn" Binding="{Binding Isbn}"/>
-                <DataGridTextColumn x:Name="titleColumn" Width="*" Header="Title" Binding="{Binding Title}"/>
-            </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="authorsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource authorsViewSource}}" Margin="623,10,10,340" RowDetailsVisibilityMode="VisibleWhenSelected">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="*"/>
-                <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="210,442,0,0" VerticalAlignment="Top" Width="75" Click="BackBtn_Click"/>
     </Grid>
 </Window>

@@ -69,3 +69,4 @@ C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\Base
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BaseballClassLibrary\obj\Debug\BaseballClassLibrary.csproj.CopyComplete
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BaseballClassLibrary\obj\Debug\BaseballClassLibrary.dll
 C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BaseballClassLibrary\obj\Debug\BaseballClassLibrary.pdb
+C:\Users\Thales\Documents\Centennial\Programming 3\Assingment3\Lab3Solution\BaseballClassLibrary\obj\Debug\BaseballClassLibrary.csprojAssemblyReference.cache
